@@ -1,0 +1,1126 @@
+/* =========================
+   RESET & GLOBAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #ffffff; /* Putih bersih */
+  color: #3f3f46;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* =========================
+   NAVBAR (Floating Pill Style - Themes: White, Pink, Soft Blue)
+========================= */
+
+header {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  border-bottom: none;
+}
+
+.navbar {
+  max-width: fit-content;
+  margin: 0 auto;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.85); /* Putih bersih transparan */
+  backdrop-filter: blur(12px);
+  border: 1px solid #fce7f3; /* Border pink sangat lembut */
+  border-radius: 50px; /* Shape kapsul melayang */
+  box-shadow: 0 10px 25px rgba(236, 72, 153, 0.08); /* Soft pink shadow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  display: none; /* Sembunyikan logo teks agar fokus ke menu kapsul */
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 6px;
+  align-items: center;
+}
+
+.nav-menu a {
+  color: #52525b;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+/* Hover ke Soft Blue */
+.nav-menu a:hover {
+  color: #3b82f6; 
+  background: #eff8ff; 
+}
+
+/* Menu aktif (misal Home) dengan aksen Pink */
+.nav-menu a.active {
+  color: #ec4899;
+  background: #fff0f7;
+}
+
+/* =========================
+   HOME / HERO
+========================= */
+
+.hero {
+  min-height: 100vh;
+  max-width: 1100px;
+  margin: auto;
+
+  padding: 120px 20px 70px;
+
+  display: flex;
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 700px;
+}
+
+.greeting {
+  color: #ec4899; /* Pink */
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.hero h1 {
+  font-size: 70px;
+  color: #27272a;
+  margin: 5px 0;
+}
+
+.hero h2 {
+  font-size: 30px;
+  color: #3b82f6; /* Soft Blue untuk sub-judul */
+  margin-bottom: 20px;
+}
+
+.hero-text > p:not(.greeting) {
+  color: #71717a;
+  font-size: 18px;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   HERO BUTTON
+========================= */
+
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.btn,
+.btn-outline {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+/* Tombol Primary Pink */
+.btn {
+  background: #ec4899;
+  color: white;
+}
+
+.btn:hover {
+  background: #db2777;
+  transform: translateY(-3px);
+}
+
+/* Tombol Secondary Soft Blue */
+.btn-outline {
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
+  background: white;
+}
+
+.btn-outline:hover {
+  background: #3b82f6;
+  color: white;
+  transform: translateY(-3px);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 18px;
+  }
+
+  .nav-menu a {
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 170px 20px 80px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .hero h2 {
+    font-size: 23px;
+  }
+
+  .hero-text > p:not(.greeting) {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn,
+  .btn-outline {
+    text-align: center;
+  }
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.section {
+  max-width: 1100px;
+  margin: 35px auto;
+  padding: 100px 20px;
+  border-radius: 28px;
+}
+
+.about-section {
+  background: #ffffff;
+  border-radius: 28px;
+}
+
+.section-heading {
+  margin-bottom: 45px;
+}
+
+.section-label {
+  color: #ec4899; /* Pink */
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.section-heading h2 {
+  font-size: 42px;
+  color: #27272a;
+  margin-bottom: 12px;
+}
+
+/* Garis bawah gradasi Pink - Soft Blue */
+.section-heading h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #ec4899, #3b82f6);
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.section-heading > p:last-child {
+  color: #71717a;
+  max-width: 600px;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Kotak teks about diberi sentuhan Soft Blue */
+.about-text {
+  background: #eff8ff; 
+  border: 1px solid #dbeafe;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.about-text h3 {
+  color: #27272a;
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
+.about-text p {
+  color: #71717a;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* Efek selang-seling Pink dan Soft Blue pada Info Box */
+.info-box {
+  background: #fff0f7;
+  border: 1px solid #fce7f3;
+  border-radius: 18px;
+  padding: 24px;
+  transition: 0.3s ease;
+}
+
+.info-box:nth-child(2),
+.info-box:nth-child(3) {
+  background: #eff8ff; /* Soft Blue */
+  border: 1px solid #dbeafe;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+  border-color: #f9a8d4;
+  box-shadow: 0 12px 25px rgba(236, 72, 153, 0.08);
+}
+
+.info-box:nth-child(2):hover,
+.info-box:nth-child(3):hover {
+  border-color: #93c5fd;
+  box-shadow: 0 12px 25px rgba(59, 130, 246, 0.1);
+}
+
+.info-box span {
+  display: block;
+  color: #71717a;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.info-box strong {
+  color: #ec4899;
+  font-size: 18px;
+}
+
+.info-box:nth-child(2) strong,
+.info-box:nth-child(3) strong {
+  color: #3b82f6; /* Soft Blue */
+}
+
+
+/* RESPONSIVE ABOUT */
+@media (max-width: 768px) {
+  .section {
+    padding: 75px 20px;
+  }
+  .section-heading h2 {
+    font-size: 34px;
+  }
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-info {
+    grid-template-columns: 1fr;
+  }
+  .about-text {
+    padding: 22px;
+  }
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-section {
+  background: #f8fafc; /* Abu sangat lembut / Putih kebiruan */
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.skill-card {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 22px;
+  padding: 30px 24px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  border-color: #f9a8d4;
+  box-shadow: 0 15px 35px rgba(236, 72, 153, 0.12);
+}
+
+/* LOGO */
+.skill-icon {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff0f7; /* Default Pink Lembut */
+  border: 1px solid #fbcfe8;
+  border-radius: 20px;
+}
+
+/* Selang-seling background ikon jadi Soft Blue */
+.skill-card:nth-child(even) .skill-icon {
+  background: #eff8ff;
+  border-color: #dbeafe;
+}
+
+.skill-icon i {
+  font-size: 48px;
+}
+
+/* WARNA LOGO ASLI (Tetap sesuai merek) */
+.skill-card:nth-child(1) .skill-icon i { color: #e34f26; } /* HTML */
+.skill-card:nth-child(2) .skill-icon i { color: #1572b6; } /* CSS */
+.skill-card:nth-child(3) .skill-icon i { color: #f7df1e; } /* JavaScript */
+.skill-card:nth-child(4) .skill-icon i { color: #777bb4; } /* PHP */
+.skill-card:nth-child(5) .skill-icon i { color: #4479a1; } /* MySQL */
+.skill-card:nth-child(6) .skill-icon i { color: #ff2d20; } /* Laravel */
+.skill-card:nth-child(7) .skill-icon i { color: #181717; } /* GitHub */
+
+.skill-card h3 {
+  color: #27272a;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  color: #71717a;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* RESPONSIVE SKILLS */
+@media (max-width: 900px) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+  .skill-card {
+    padding: 28px 22px;
+  }
+}
+
+
+/* =========================
+   CERTIFICATES
+========================= */
+
+.certificates-section {
+  background: #ffffff;
+}
+
+.certificate-container {
+  display: flex;
+  justify-content: center;
+}
+
+.certificate-card {
+  width: 100%;
+  max-width: 850px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.08); /* Shadow soft blue */
+  transition: 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(59, 130, 246, 0.12);
+}
+
+.certificate-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  background: white;
+}
+
+.certificate-content {
+  padding: 22px 5px 5px;
+}
+
+.certificate-content h3 {
+  color: #27272a;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.certificate-content p {
+  color: #3b82f6; /* Soft Blue */
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.certificate-content span {
+  color: #71717a;
+  font-size: 14px;
+}
+
+/* RESPONSIVE CERTIFICATES */
+@media (max-width: 600px) {
+  .certificate-card {
+    padding: 14px;
+    border-radius: 18px;
+  }
+  .certificate-content {
+    padding: 18px 3px 3px;
+  }
+  .certificate-content h3 {
+    font-size: 19px;
+  }
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects-section {
+  background: #f8fafc; /* Putih kebiruan */
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: #93c5fd;
+  box-shadow: 0 18px 35px rgba(59, 130, 246, 0.12);
+}
+
+/* BAGIAN GAMBAR PROJECT */
+.project-image {
+  height: 220px;
+  background: #eff8ff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.04);
+}
+
+.project-image span {
+  color: #3b82f6;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+/* ISI PROJECT */
+.project-content {
+  padding: 25px;
+}
+
+.project-content h3 {
+  color: #27272a;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.project-content p {
+  color: #71717a;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+/* TECHNOLOGY (Label) */
+.project-tech {
+  display: inline-block;
+  padding: 7px 12px;
+  background: #fff0f7;
+  border: 1px solid #fbcfe8;
+  border-radius: 10px;
+  color: #ec4899;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: #3b82f6; /* Soft blue */
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.project-link:hover {
+  color: #ec4899; /* Pink saat hover */
+  transform: translateX(4px);
+}
+
+/* RESPONSIVE PROJECTS */
+@media (max-width: 900px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+  .project-image {
+    height: 170px;
+  }
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+  background: #ffffff;
+}
+
+.contact-container {
+  max-width: 750px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+  background: #fff0f7; /* Default Pink Lembut */
+  border: 1px solid #fce7f3;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+/* Kartu kontak selang-seling Soft Blue */
+.contact-card:nth-child(even) {
+  background: #eff8ff;
+  border: 1px solid #dbeafe;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  border-color: #f9a8d4;
+  box-shadow: 0 15px 30px rgba(236, 72, 153, 0.10);
+}
+
+.contact-card:nth-child(even):hover {
+  border-color: #93c5fd;
+  box-shadow: 0 15px 30px rgba(59, 130, 246, 0.10);
+}
+
+.contact-icon {
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid #fbcfe8;
+  border-radius: 15px;
+  color: #ec4899;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.contact-card:nth-child(even) .contact-icon {
+  border: 1px solid #dbeafe;
+  color: #3b82f6;
+}
+
+.contact-card span {
+  display: block;
+  color: #71717a;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.contact-card a {
+  color: #ec4899;
+  font-weight: 600;
+  font-size: 14px;
+  word-break: break-word;
+  transition: 0.3s ease;
+}
+
+.contact-card:nth-child(even) a {
+  color: #3b82f6;
+}
+
+.contact-card a:hover {
+  color: #db2777;
+}
+
+.contact-card:nth-child(even) a:hover {
+  color: #2563eb;
+}
+
+/* RESPONSIVE CONTACT */
+@media (max-width: 650px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+  .contact-card {
+    padding: 20px;
+  }
+}
+/* =========================
+   RESPONSIVE - TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+  /* NAVBAR */
+  header {
+    padding: 0 15px;
+  }
+
+  .navbar {
+    max-width: 95%;
+  }
+
+  .nav-menu {
+    gap: 2px;
+  }
+
+  .nav-menu a {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+
+  /* HERO */
+  .hero {
+    max-width: 900px;
+    padding: 140px 30px 80px;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+  }
+
+  .hero h2 {
+    font-size: 26px;
+  }
+
+
+  /* ABOUT */
+  .about-content {
+    gap: 35px;
+  }
+
+
+  /* SKILLS */
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  /* PROJECTS */
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  header {
+    top: 12px;
+    padding: 0 10px;
+  }
+
+  .navbar {
+    width: 100%;
+    max-width: 100%;
+    padding: 7px 10px;
+    border-radius: 22px;
+  }
+
+  .nav-menu {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  .nav-menu a {
+    padding: 8px 9px;
+    font-size: 11px;
+  }
+
+
+  /* HERO */
+  .hero {
+    min-height: auto;
+    padding: 145px 20px 80px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .greeting {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    line-height: 1.05;
+  }
+
+  .hero h2 {
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .hero-text > p:not(.greeting) {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn,
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+
+  /* SECTION */
+  .section {
+    width: calc(100% - 24px);
+    margin: 20px auto;
+    padding: 70px 20px;
+    border-radius: 22px;
+  }
+
+  .section-heading {
+    margin-bottom: 35px;
+  }
+
+  .section-heading h2 {
+    font-size: 34px;
+  }
+
+  .section-heading > p:last-child {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+
+  /* ABOUT */
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-text {
+    padding: 24px;
+  }
+
+  .about-text h3 {
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .about-text p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .about-info {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .info-box {
+    padding: 20px 16px;
+  }
+
+  .info-box strong {
+    font-size: 16px;
+  }
+
+
+  /* SKILLS */
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .skill-card {
+    padding: 24px 16px;
+    border-radius: 18px;
+  }
+
+  .skill-icon {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 15px;
+  }
+
+  .skill-icon i {
+    font-size: 40px;
+  }
+
+  .skill-card h3 {
+    font-size: 17px;
+  }
+
+  .skill-card p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+
+  /* PROJECTS */
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .project-card {
+    border-radius: 20px;
+  }
+
+  .project-image {
+    height: 210px;
+  }
+
+  .project-content {
+    padding: 22px;
+  }
+
+  .project-content h3 {
+    font-size: 19px;
+  }
+
+  .project-content p {
+    font-size: 14px;
+  }
+
+
+  /* CERTIFICATE */
+  .certificate-card {
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  .certificate-content {
+    padding: 18px 3px 3px;
+  }
+
+  .certificate-content h3 {
+    font-size: 20px;
+  }
+
+
+  /* CONTACT */
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .contact-card {
+    padding: 18px;
+  }
+
+}
+
+
+/* =========================
+   RESPONSIVE - HP KECIL
+========================= */
+
+@media (max-width: 480px) {
+
+  /* NAVBAR */
+  .nav-menu {
+    gap: 0;
+  }
+
+  .nav-menu a {
+    padding: 7px 6px;
+    font-size: 10px;
+  }
+
+
+  /* HERO */
+  .hero {
+    padding: 135px 18px 65px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+    letter-spacing: -1.5px;
+  }
+
+  .hero h2 {
+    font-size: 19px;
+  }
+
+  .hero-text > p:not(.greeting) {
+    font-size: 14px;
+  }
+
+
+  /* SECTION */
+  .section {
+    width: calc(100% - 16px);
+    padding: 60px 16px;
+  }
+
+  .section-heading h2 {
+    font-size: 30px;
+  }
+
+
+  /* ABOUT */
+  .about-info {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* SKILLS */
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    padding: 26px 20px;
+  }
+
+
+  /* PROJECT */
+  .project-image {
+    height: 190px;
+  }
+
+
+  /* CONTACT */
+  .contact-card {
+    gap: 13px;
+    padding: 16px;
+  }
+
+  .contact-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  .contact-card a {
+    font-size: 12px;
+  }
+
+}
